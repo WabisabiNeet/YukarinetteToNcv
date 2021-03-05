@@ -31,7 +31,6 @@ namespace YukarinetteToNcv
 
         public override void Speech(string text)
         {
-            YukarinetteConsoleMessage.Instance.WriteMessage("[YukarinetteToNcvPlugin] AfterSpeech.");
             try
             {
                 msg?.DataTrance(text);
