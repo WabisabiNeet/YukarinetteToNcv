@@ -61,10 +61,15 @@ namespace YukarinetteReceiverPlugin
 
         private void onTrance(RecognitionResultMessage.RecognitionResultMessageEventArg e)
         {
-            Task.Delay(4000).Wait();
+
             if (Host.IsConnected)
             {
-                Host.SendOwnerComment(e.Text);
+                Task.Run(() =>
+                {
+                    Task.Delay(4000).Wait();
+                    Host.SendOwnerComment(e.Text);
+                });
+
             }
         }
     }
